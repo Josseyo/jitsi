@@ -5,14 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jitsi Integration</title>
     <script src='https://8x8.vc/vpaas-magic-cookie-4e226c82e25b4794a5637976951f4636/b8a223/external_api.js' async></script>
-    <style>html, body, #jaas-container { height: 100%; margin: 0; }</style>
+    <style>
+        html, body, #jaas-container {
+            height: 100%;
+            margin: 0;
+        }
+    </style>
     <script type="text/javascript">
         window.onload = () => {
-            const api = new JitsiMeetExternalAPI("8x8.vc", {
-                roomName: "vpaas-magic-cookie-4e226c82e25b4794a5637976951f4636/b8a223",
-                parentNode: document.querySelector('#jaas-container'),
-                jwt: "eyJhbGciOiJSUzI1NiIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS00ZTIyNmM4MmUyNWI0Nzk0YTU2Mzc5NzY5NTFmNDYzNi9iOGEyMjMiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJqaXRzaSIsImNvbnRleHQiOnsidXNlciI6eyJpZCI6IjBmOGI3NzYwLWMxN2YtNGExMi1iMTM0LWM2YWMzNzE2NzE0NCIsIm5hbWUiOiJKb3NlZmluIiwiYXZhdGFyIjoiaHR0cHM6Ly9saW5rLnRvL3VzZXIvYXZhdGFyL3BpY3R1cmUiLCJlbWFpbCI6Impvc2VmaW5AeW9tYWNvLmNvbSIsIm1vZGVyYXRvciI6InRydWUifSwiZmVhdHVyZXMiOnsibGl2ZXN0cmVhbWluZyI6InRydWUiLCJyZWNvcmRpbmciOiJ0cnVlIn19LCJleHAiOjE2OTYyODQwNTIsImlzcyI6ImNoYXQiLCJuYmYiOjE1OTYxOTc2NTIsInJvb20iOiIqIiwic3ViIjoidnBhYXMtbWFnaWMtY29va2llLTRlMjI2YzgyZTI1YjQ3OTRhNTYzNzk3Njk1MWY0NjM2L2I4YTIyMyJ9.loSUjTNUDl5zs5liGgUgl0SY8ah73xg0ucEax09XkYiU4EwhSPqh8L_f4u--9XRU01vJMc80jDCzoia6m4JhGR7acaTsA7B_FfHCsi18q2RTuCa3Qf_mEl65b45VicqpwYGUw1t9K-2J7ma1XUyQSuYKQOakzzuZLuj5b2Eq_8odGhyQ6TPLmAgRmg-IrQ6Z7tQMBogV9yMnTraeq7IuAsYPU12IP2wMckQo6oXwy6jutc55BZ3RqftpZGBjMxJyXbaXqRXxcgZMKByIQ-fbtHU95XbC0SuE4-T8KEvpXLhHSszuzTBkn95WYYPKoKT0RFnexD23RzHQ4FGfzCoF8U8X_gJHmDrFMZSlqp7tk_JBMFn4wkvxeHxJ8jyEAQgNIvw5QMgSqtV5v05T-zwc7ry03DU2gdgYkgtXmDIn3_7IfMdFhJuky8FFsZREGGFVTcVRTjWZ6lX-Lav2yftxdSoE55q2WtgArpSudDDNMbBAiTHNm0pzRZIiv8HRTRkek4gU_m1SlNKWy4WUW7gOttPHd217KIx2tyWSSFUgGDPchI-vXjTjoXLUDicx08ANmQDiSbBC_3-Ags9JQ5hzgC8OXiBfTEuGaSq51V2p1qfmkD3KIqKKXfGM7s6ZrYb-rjOzSaMjoWWmEwzJzVTRs5Yz0uRSe1dWyPjo-uo4kS8"
-            });
+            try {
+                const api = new JitsiMeetExternalAPI("8x8.vc", {
+                    roomName: "vpaas-magic-cookie-4e226c82e25b4794a5637976951f4636/b8a223",
+                    parentNode: document.querySelector('#jaas-container'),
+                    jwt: "eyJhbGciOiJSUzI1NiIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS00ZTIyNmM4MmUyNWI0Nzk0YTU2Mzc5NzY5NTFmNDYzNi9iOGEyMjMiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJqaXRzaSIsImNvbnRleHQiOnsidXNlciI6eyJpZCI6IjBmOGI3NzYwLWMxN2YtNGExMi1iMTM0LWM2YWMzNzE2NzE0NCIsIm5hbWUiOiJKb3NlZmluIiwiYXZhdGFyIjoiaHR0cHM6Ly9saW5rLnRvL3VzZXIvYXZhdGFyL3BpY3R1cmUiLCJlbWFpbCI6Impvc2VmaW5AeW9tYWNvLmNvbSIsIm1vZGVyYXRvciI6InRydWUifSwiZmVhdHVyZXMiOnsibGl2ZXN0cmVhbWluZyI6InRydWUiLCJyZWNvcmRpbmciOiJ0cnVlIn19LCJleHAiOjE2OTYyODQwNTIsImlzcyI6ImNoYXQiLCJuYmYiOjE1OTYxOTc2NTIsInJvb20iOiIqIiwic3ViIjoidnBhYXMtbWFnaWMtY29va2llLTRlMjI2YzgyZTI1YjQ3OTRhNTYzNzk3Njk1MWY0NjM2L2I4YTIyMyJ9.loSUjTNUDl5zs5liGgUgl0SY8ah73xg0ucEax09XkYiU4EwhSPqh8L_f4u--9XRU01vJMc80jDCzoia6m4JhGR7acaTsA7B_FfHCsi18q2RTuCa3Qf_mEl65b45VicqpwYGUw1t9K-2J7ma1XUyQSuYKQOakzzuZLuj5b2Eq_8odGhyQ6TPLmAgRmg-IrQ6Z7tQMBogV9yMnTraeq7IuAsYPU12IP2wMckQo6oXwy6jutc55BZ3RqftpZGBjMxJyXbaXqRXxcgZMKByIQ-fbtHU95XbC0SuE4-T8KEvpXLhHSszuzTBkn95WYYPKoKT0RFnexD23RzHQ4FGfzCoF8U8X_gJHmDrFMZSlqp7tk_JBMFn4wkvxeHxJ8jyEAQgNIvw5QMgSqtV5v05T-zwc7ry03DU2gdgYkgtXmDIn3_7IfMdFhJuky8FFsZREGGFVTcVRTjWZ6lX-Lav2yftxdSoE55q2WtgArpSudDDNMbBAiTHNm0pzRZIiv8HRTRkek4gU_m1SlNKWy4WUW7gOttPHd217KIx2tyWSSFUgGDPchI-vXjTjoXLUDicx08ANmQDiSbBC_3-Ags9JQ5hzgC8OXiBfTEuGaSq51V2p1qfmkD3KIqKKXfGM7s6ZrYb-rjOzSaMjoWWmEwzJzVTRs5Yz0uRSe1dWyPjo-uo4kS8"
+                });
+
+                // Event listeners for error handling
+                api.addEventListener('videoConferenceJoined', () => {
+                    console.log('Conference joined successfully');
+                });
+
+                api.addEventListener('videoConferenceFailed', (error) => {
+                    console.error('Failed to join conference:', error);
+                    alert('Could not join the conference. Please check your room name and try again.');
+                });
+
+                api.addEventListener('participantJoined', (participantId) => {
+                    console.log(`Participant joined: ${participantId}`);
+                });
+
+                api.addEventListener('participantLeft', (participantId) => {
+                    console.log(`Participant left: ${participantId}`);
+                });
+
+            } catch (error) {
+                console.error('Error initializing Jitsi Meet API:', error);
+                alert('An error occurred while initializing the Jitsi Meet API. Please try again later.');
+            }
         }
     </script>
 </head>
